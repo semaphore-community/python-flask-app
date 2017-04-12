@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body style="padding: 20px">
+  <div class="container panel panel-default">
+    <div class="row">
+      <div class="col-lg-4 col-lg-offset-4">
+        <h2>Todo List</h2>
+        <form action="/new" method="POST">
+          <input class="form-control" type="text" name="name" placeholder="Todo Name"></input><br>
+          <input class="form-control" type="text" name="description" placeholder="Todo Description"></input><br>
+          <input class="btn btn-primary" type="submit" value="Save Todo"></input>
+        </form>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <div class="col-lg-4 col-lg-offset-4">
+        <div class="panel panel-danger">
+          <div class="panel-body">
+            {% for item in items %}
+            <h1> {{ item.name }} </h1>
+            <p> {{ item.description }}
+              <p>
+                {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
